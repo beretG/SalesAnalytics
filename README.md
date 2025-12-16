@@ -74,10 +74,11 @@ ORDER BY RevenueRank;
 ![Top Products](screenshots/top_products.png)
 
 **Key Insights:**
-- **Laptop HP Book** dominates with $182K+ revenue (8x more than #2)
-- Top 3 products account for 35% of total sales
-- Electronics category leads in revenue per unit
-
+- **Laptop HP Book** leads with $758,747 revenue (59 orders, 253 units)
+- **Sneakers White** second with $90,297 (56 orders, 258 units) - high volume, lower price
+- **Jacket Winter** third with $78,897 (51 orders, 263 units)
+- Top 3 products account for ~38% of total revenue
+- **Laptop** has highest avg order value ($12,860) vs Sneakers ($1,612) - indicates different customer segments
 ---
 
 ### 2. Monthly Sales Trend Analysis
@@ -101,9 +102,12 @@ ORDER BY MonthStart DESC;
 ![Monthly Trend](screenshots/monthly_trend.png)
 
 **Key Insights:**
-- **Q1 2025:** Strong growth (+29% to +53% MoM)
-- **April 2025:** Peak revenue month ($214K)
-- **Q4 2025:** Declining trend (-16% to -53% MoM) → requires investigation
+- **2024-12:** Baseline month ($72,599)
+- **Q1 2025 (Jan-Mar):** Strong growth (+138% Jan, -10% Feb, -32% Mar) - volatile start
+- **Peak months:** September 2025 ($153,944) and July 2025 ($145,666)
+- **Recent trend (Oct-Dec 2025):** Declining (-31% → -54% → +10%) - stabilizing after peak
+- **Moving Average:** Shows smoother trend, reduces monthly volatility
+- **Notable:** December 2024 had NULL values (first month, no prior comparison)
 
 ---
 
@@ -134,19 +138,21 @@ ORDER BY TotalSpent DESC;
 ![RFM Segmentation](screenshots/rfm_segmentation.png)
 
 **Key Insights:**
-- **0 Champions** (R≥4, F≥4, M≥4) → Opportunity for VIP program
-- **2 Loyal Customers** → Focus on upselling
-- **2 At Risk** → Immediate retention campaign needed
-- **2 Lost** → Win-back strategy with special offers
+- **1 Champion** identified: Quality Goods (R=5, F=5, M=5, Score=5.0) 🏆
+- **2 At Risk** customers: Prime Traders & UK Imports Ltd (need retention campaign)
+- **4 At Risk** total: Office Supplies Plus, Euro Distributors, ABC Corp, XYZ Trading
+- **1 Lost** customer: ProBusiness Group (Score=1.7) - immediate win-back needed
+- **Quality Goods:** 45 days since last order, 15 orders, $54,567 spent - top performer
+- **Retail Masters:** High total spent ($136,862) but only 1.7 RFM score - needs investigation
 
 **Customer Segments:**
 | Segment | Count | Action Required |
 |---------|-------|-----------------|
-| Champions | 0 | Build VIP loyalty program |
-| Loyal Customers | 2 | Upsell & cross-sell |
+| Champions | 1 | VIP rewards, early access |
+| At Risk | 2 | 🚨 Retention campaign (Prime Traders, UK Imports) |
 | Potential Loyalists | 8 | Nurture with engagement |
-| At Risk | 2 | 🚨 Retention campaign |
-| Lost | 2 | 🚨 Win-back offers |
+| New Customers | 2 | Onboarding flow |
+| Lost | 1 | 🚨 Win-back (ProBusiness Group) |
 
 ---
 
@@ -259,10 +265,12 @@ SELECT * FROM vw_TopProducts;        -- Should return Top 10
 | **Time Period** | 13 months (Dec 2024 - Dec 2025) |
 | **Total Orders** | 400 |
 | **Order Details** | 1,850+ line items |
-| **Total Revenue** | ~$2.4M |
-| **Avg Order Value** | ~$6,000 |
+| **Total Revenue** | ~$1.5M (based on monthly trend) |
+| **Avg Monthly Revenue** | ~$115K |
+| **Peak Month** | September 2025 ($153,944) |
 | **Products** | 30 (across 5 categories) |
-| **Active Customers** | 16 (8 countries) |
+| **Active Customers** | 16 |
+| **Top Customer** | Quality Goods (Champion, $54.5K spent) |
 | **Order Completion Rate** | 80% Delivered, 10% Shipped, 5% Pending, 5% Cancelled |
 
 ---
